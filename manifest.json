@@ -1,0 +1,51 @@
+{
+  "name": "Hasaan Bazaar | Elegance of Sunnah",
+  "short_name": "Hasaan Bazaar",
+  "description": "প্রিমিয়াম ইসলামিক লাইফস্টাইল, খাঁটি আতর, পাঞ্জাবি, টুপি ও সুন্দরবনের প্রাকৃতিক মধু",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#06442e",
+  "theme_color": "#06442e",
+  "lang": "bn-BD",
+  "dir": "ltr",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "জনপ্রিয় আতর (Attar)",
+      "short_name": "আতর",
+      "description": "রয়েল ও প্রাকৃতিক আতর দেখুন",
+      "url": "./index.html?filter=attar",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "খাঁটি মধু (Honey)",
+      "short_name": "মধু",
+      "description": "সুন্দরবনের প্রাকৃতিক চাকভাঙা মধু",
+      "url": "./index.html?filter=honey",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "অর্ডার ট্র্যাকিং",
+      "short_name": "ট্র্যাকিং",
+      "description": "আপনার অর্ডারের বর্তমান অবস্থা দেখুন",
+      "url": "./index.html?action=track",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

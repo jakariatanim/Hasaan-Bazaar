@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Hasaan Bazaar | Elegance of Sunnah</title>
+  
+  <!-- Google Fonts: Nunito (Brand Font Regular 400), Montserrat, Noto Sans Bengali & Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- PWA & Mobile Web App Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#06442e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Hasaan Bazaar">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon-192.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Notification Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span><i class="fa-solid fa-moon gold-text"></i> HASAAN BAZAAR — Elegance of Sunnah | ১০০% খাঁটি ও সুন্নাহ সম্মত প্রিমিয়াম পণ্য</span>
+      <div class="top-bar-links">
+        <a href="tel:+8801738625136" class="top-call-link"><i class="fa-solid fa-phone"></i> +৮৮০ ১৭৩৮-৬২৫১৩৬</a>
+        <span>|</span>
+        <a href="https://wa.me/8801738625136" target="_blank" class="top-wa-link"><i class="fa-brands fa-whatsapp gold-text"></i> হোয়াটসঅ্যাপ হেল্পলাইন</a>
+        <span>|</span>
+        <button type="button" class="top-link-btn" onclick="openPolicyModal('refund')"><i class="fa-solid fa-rotate-left"></i> রিটার্ন পলিসি</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="মেনু খুলুন">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+
+      <!-- Brand Logo: 100% Transparent SVG Vector Logo -->
+      <a href="#" class="logo hasaan-logo">
+        <div class="logo-box">
+          <img src="logo.svg" alt="Hasaan Bazaar Logo" class="custom-logo-file">
+        </div>
+        <div class="logo-text">
+          <span class="brand-name en-brand">Hasaan Bazaar</span>
+          <span class="brand-tagline">ELEGANCE OF SUNNAH</span>
+        </div>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <div class="mobile-menu-header">
+          <span class="mobile-title">Menu</span>
+          <button class="close-menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#guaranteeSection">Guarantee</a></li>
+          <li><a href="#reviewsSection">Reviews</a></li>
+          <li><a href="#locationSection">Location</a></li>
+          <li><a href="#ownerSection">Founder</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="javascript:void(0)" onclick="openOrderTrackingModal()" class="nav-track-link"><i class="fa-solid fa-truck-fast gold-text"></i> ট্র্যাক অর্ডার</a></li>
+          <li><a href="tel:+8801738625136">Call Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Icons (Live Search & Cart) -->
+      <div class="nav-actions">
+        <!-- Live Search Box -->
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="পণ্য খুঁজুন (আতর, টুপি...)" aria-label="পণ্য খুঁজুন">
+          <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="সার্চ ক্লিয়ার"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" id="searchSubmitBtn" aria-label="সার্চ করুন"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <!-- Track Order Nav Button -->
+        <button type="button" class="nav-track-btn" onclick="openOrderTrackingModal()" aria-label="অর্ডার ট্র্যাক করুন" title="আপনার অর্ডার লাইভ ট্র্যাক করুন">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span class="nav-track-text">ট্র্যাক অর্ডার</span>
+        </button>
+        
+        <button class="cart-btn" id="cartBtn" aria-label="শপিং কার্ট">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Search Bar (Only visible on mobile devices) -->
+    <div class="mobile-search-bar" id="mobileSearchBar">
+      <div class="container mobile-search-inner">
+        <div class="mobile-search-box">
+          <i class="fa-solid fa-magnifying-glass mobile-search-icon"></i>
+          <input type="text" id="mobileSearchInput" placeholder="পণ্য খুঁজুন (আতর, টুপি, পাঞ্জাবি, মধু)..." aria-label="মোবাইল পণ্য সার্চ">
+          <button type="button" id="mobileSearchClearBtn" class="mobile-search-clear-btn" aria-label="সার্চ ক্লিয়ার"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-award gold-text"></i> HASAAN BAZAAR — আভিজাত্য ও সুন্নাহর মেলবন্ধন
+      </div>
+      <h1 class="hero-title">
+        অভিজাত রুচি ও সুন্নাহর ছোঁয়ায় <br>
+        <span class="gold-gradient-text">Elegance of Sunnah</span>
+      </h1>
+      <p class="hero-desc">
+        খাঁটি ও প্রাকৃতিক রয়্যাল উদ ও আতর, সুতি কাপড়ের চমৎকার ডিজাইনের পাঞ্জাবি, ঐতিহ্যবাহী টুপি এবং সুন্দরবনের প্রাকৃতিক চাকভাঙা খাঁটি মধু — সবই পাবেন Hasaan Bazaar-এ।
+      </p>
+      <div class="hero-buttons">
+        <a href="#featured" class="btn btn-primary">
+          <span>এখনই কিনুন (Shop Now)</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="tel:+8801738625136" class="btn btn-call-hero">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>সরাসরি কল দিন</span>
+        </a>
+        <button type="button" class="btn btn-secondary" onclick="openPolicyModal('delivery')">
+          <i class="fa-solid fa-truck"></i>
+          <span>ডেলিভারি পলিসি</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Features Banner -->
+  <section class="features-bar" id="features">
+    <div class="container features-grid">
+      <div class="feature-item" onclick="openPolicyModal('about')" role="button" tabindex="0">
+        <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
+        <div>
+          <h4>১০০% খাঁটি কোয়ালিটি</h4>
+          <p>সম্পূর্ণ নির্ভেজাল ও আসল পণ্য (বিস্তারিত)</p>
+        </div>
+      </div>
+      <div class="feature-item" onclick="openPolicyModal('delivery')" role="button" tabindex="0">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div>
+          <h4>দ্রুত হোম ডেলিভারি</h4>
+          <p>ঢাকা ৮০৳ / বাইরে ১৫০৳ (পলিসি দেখুন)</p>
+        </div>
+      </div>
+      <div class="feature-item" onclick="openPolicyModal('refund')" role="button" tabindex="0">
+        <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <div>
+          <h4>সহজ রিটার্ন পলিসি</h4>
+          <p>পণ্য দেখে মূল্য পরিশোধ ও রিফান্ড নীতি</p>
+        </div>
+      </div>
+      <div class="feature-item" onclick="openPolicyModal('support')" role="button" tabindex="0">
+        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+        <div>
+          <h4>২৪/৭ গ্রাহক সেবা</h4>
+          <p>WhatsApp ও ফোনে সরাসরি সহায়তা</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle"><i class="fa-solid fa-spa gold-text"></i> HASAAN BAZAAR COLLECTION</div>
+        <h2 class="section-title">আমাদের মূল ক্যাটাগরি</h2>
+        <div class="section-divider">
+          <span></span><i class="fa-solid fa-star gold-text"></i><span></span>
+        </div>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Category 1: Attar -->
+        <a href="#featured" class="category-card" data-category="attar">
+          <div class="category-img-wrap">
+            <img src="https://ator.com.bd/cdn/shop/files/ChatGPT_Image_Sep_6_2026_12_58_11_AM.png?v=1788638640&width=832" alt="খাঁটি আতর ও সুগন্ধি" loading="lazy">
+            <div class="category-overlay"></div>
+          </div>
+          <div class="category-content">
+            <div class="category-icon"><i class="fa-solid fa-bottle-droplet"></i></div>
+            <h3>আতর ও সুগন্ধি</h3>
+            <p>Kasturi Elite, Khaltat Night, Musk Kashmir সহ প্রিমিয়াম কালেকশন</p>
+            <span class="category-btn">কালেকশন দেখুন <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 2: Tupi -->
+        <a href="#featured" class="category-card" data-category="tupi">
+          <div class="category-img-wrap">
+            <img src="https://static-01.daraz.com.bd/p/69c71ad17f1a281275f68dcc30b68fc3.png" alt="ইসলামিক টুপি" loading="lazy">
+            <div class="category-overlay"></div>
+          </div>
+          <div class="category-content">
+            <div class="category-icon"><i class="fa-solid fa-hat-cowboy"></i></div>
+            <h3>ইসলামিক টুপি</h3>
+            <p>আফগান, মিশরীয় কুফি, জিন্নাহ ও বগিস টুপি কালেকশন</p>
+            <span class="category-btn">কালেকশন দেখুন <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 3: Panjabi -->
+        <a href="#featured" class="category-card" data-category="panjabi">
+          <div class="category-img-wrap">
+            <img src="https://anjans.com/image/cache/catalog/Margin1/Panjabi-33745-800x800.jpg" alt="এক্সক্লুসিভ পাঞ্জাবি" loading="lazy">
+            <div class="category-overlay"></div>
+          </div>
+          <div class="category-content">
+            <div class="category-icon"><i class="fa-solid fa-shirt"></i></div>
+            <h3>এক্সক্লুসিভ পাঞ্জাবি</h3>
+            <p>Khadi, Linen, Silk ও Cotton ফেব্রিকের প্রিমিয়াম পাঞ্জাবি কালেকশন</p>
+            <span class="category-btn">কালেকশন দেখুন <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 4: Honey -->
+        <a href="#featured" class="category-card" data-category="honey">
+          <div class="category-img-wrap">
+            <img src="https://apiproduktai.com/wp-content/uploads/Honey-Main.webp" alt="খাঁটি প্রাকৃতিক মধু" loading="lazy">
+            <div class="category-overlay"></div>
+          </div>
+          <div class="category-content">
+            <div class="category-icon"><i class="fa-solid fa-jar"></i></div>
+            <h3>প্রাকৃতিক খাঁটি মধু</h3>
+            <p>লিচু, মাল্টিফ্লোরাল, কাশ্মীরি সিদর ও কালোজিরা মধু কালেকশন</p>
+            <span class="category-btn">কালেকশন দেখুন <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section featured-section" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle"><i class="fa-solid fa-crown gold-text"></i> HASAAN BAZAAR FEATURED</div>
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-hint"><i class="fa-solid fa-circle-info gold-text"></i> যেকোনো পণ্যে ক্লিক করে সম্পূর্ণ বিবরণ ও ছবি দেখুন</p>
+        <div class="section-divider">
+          <span></span><i class="fa-solid fa-star gold-text"></i><span></span>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-filter="all">সব পণ্য</button>
+        <button class="tab-btn" data-filter="attar">আতর</button>
+        <button class="tab-btn" data-filter="tupi">টুপি</button>
+        <button class="tab-btn" data-filter="panjabi">পাঞ্জাবি</button>
+        <button class="tab-btn" data-filter="honey">খাঁটি মধু</button>
+      </div>
+
+      <!-- Search feedback message -->
+      <div class="search-status" id="searchStatus" style="display: none;"></div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products dynamically injected via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotional Banner Section -->
+  <section class="promo-banner-section">
+    <div class="container promo-banner">
+      <div class="promo-text">
+        <span class="badge-gold">SPECIAL COMBO OFFER</span>
+        <h3>পাঞ্জাবি, টুপি ও রয়্যাল উদ কম্বো প্যাকেজে পাচ্ছেন ১৫% বিশেষ ছাড়!</h3>
+        <p>পবিত্র জুমার নামাজ কিংবা বিশেষ উপহারের জন্য সাজিয়ে নিন আপনার পারফেক্ট সুন্নাহ গিফট কিট।</p>
+        <a href="#featured" class="btn btn-primary">অফারটি নিন <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="promo-badge-box">
+        <span class="discount-num">১৫%</span>
+        <span class="discount-txt">ডিসকাউন্ট</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 100% Purity & Lab-Tested Guarantee Section (GhorerBazar High Trust Model) -->
+  <section class="section guarantee-section" id="guaranteeSection">
+    <div class="container">
+      <div class="guarantee-box">
+        <div class="guarantee-header">
+          <div class="guarantee-badge"><i class="fa-solid fa-certificate gold-text"></i> ১০০% সততা ও খাঁটিত্বের অঙ্গীকার</div>
+          <h2 class="guarantee-title">Hasaan Bazaar কোয়ালিটি ও মান নিয়ন্ত্রণ গ্যারান্টি</h2>
+          <p class="guarantee-desc">অনলাইনে কেনাকাটায় আপনার প্রতি পয়সার আমানত রক্ষা করা আমাদের ঈমানী দায়িত্ব। আমাদের প্রতিটি পণ্য সর্বোচ্চ সততার সাথে যাচাইকৃত।</p>
+        </div>
+
+        <div class="guarantee-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <div class="guarantee-info">
+              <h4>১০০% ল্যাব টেস্টেড খাঁটি মধু</h4>
+              <p>সুন্দরবনের প্রাকৃতিক চাক ও খামারের সম্পূর্ণ অপরিশোধিত র মধু। কোনো কৃত্রিম মিষ্টি বা ভেজাল নেই — <strong>ভেজাল প্রমাণে দ্বিগুণ মূল্য ফেরত গ্যারান্টি!</strong></p>
+            </div>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fa-solid fa-droplet"></i></div>
+            <div class="guarantee-info">
+              <h4>১০০% অ্যালকোহলমুক্ত রয়্যাল আতর</h4>
+              <p>বিশ্বমানের খাঁটি উপাদান থেকে সংগৃহীত। সম্পূর্ণ হালাল, কাপড়ে দাগ পড়ে না এবং দীর্ঘস্থায়ী সুবাস ছড়ায়। নামাজ ও ইবাদতের জন্য শতভাগ নিরাপদ।</p>
+            </div>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fa-solid fa-shirt"></i></div>
+            <div class="guarantee-info">
+              <h4>আসল কটন ও ঐতিহ্যবাহী টুপি</h4>
+              <p>উচ্চমানের খাঁটি সুতি ও ঐতিহ্যবাহী খাদি কাপড়। নিখুঁত সুইং ও রঙ পাকা গ্যারান্টি। কোনো সাইজ বা ফিটিং সমস্যা হলে তাৎক্ষণিক ফ্রি এক্সচেঞ্জ সুবিধা।</p>
+            </div>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fa-solid fa-box-open"></i></div>
+            <div class="guarantee-info">
+              <h4>পার্সেল দেখে মূল্য পরিশোধ (COD)</h4>
+              <p>ডেলিভারিম্যানের সামনে পার্সেল খুলে দেখে চেক করে সন্তুষ্ট হয়ে টাকা পরিশোধ করুন। কোনো আগাম টাকা ছাড়াই নিরাপদ হোম ডেলিভারি।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="guarantee-footer">
+          <div class="guarantee-trust-pill">
+            <i class="fa-solid fa-shield-halved gold-text"></i>
+            <span>বিসিএসআইআর (BCSIR) ও ফুড সেফটি গাইডলাইন অনুসরণে শতভাগ পরীক্ষিত মান</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials & Verified Reviews Section -->
+  <section class="section reviews-section" id="reviewsSection">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle"><i class="fa-solid fa-heart gold-text"></i> গ্রাহকদের সন্তুষ্টি ও আস্থা</div>
+        <h2 class="section-title">সম্মানিত গ্রাহকদের বাস্তব অভিজ্ঞতা (Customer Reviews)</h2>
+        <p class="section-subtitle">সারাদেশের ধর্মপ্রাণ ভাই ও বোনদের ভালোবাসায় Hasaan Bazaar আজ বিশ্বস্ততার প্রতীক</p>
+        <div class="section-divider">
+          <span></span><i class="fa-solid fa-star gold-text"></i><span></span>
+        </div>
+      </div>
+
+      <!-- Trust Metrics Bar -->
+      <div class="reviews-metrics-bar">
+        <div class="metric-box">
+          <div class="metric-num gold-text">৪.৯ ★</div>
+          <div class="metric-label">গড় কাস্টমার রেটিং (৫০০+ রিভিউ)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">৯৯.২%</div>
+          <div class="metric-label">সন্তুষ্ট গ্রাহক ও রিপিট অর্ডার</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">২৪-৪৮ ঘণ্টা</div>
+          <div class="metric-label">সারা দেশে দ্রুত ক্যাশ অন ডেলিভারি</div>
+        </div>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">আ</div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">মাওলানা মোঃ আব্দুল্লাহ</h4>
+              <span class="reviewer-loc"><i class="fa-solid fa-location-dot"></i> সেক্টর ৭, উত্তরা, ঢাকা</span>
+            </div>
+            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> ভেরিফাইড ক্রেতা</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span class="rating-text">৫.০ / ৫</span>
+          </div>
+          <div class="review-product">
+            <i class="fa-solid fa-bag-shopping gold-text"></i> <span>কেনা পণ্য: <strong>Kasturi Elite Attar & Afghan Tupi</strong></span>
+          </div>
+          <p class="review-comment">
+            "মাশাআল্লাহ, কস্তুরি এলিট আতরটির সুবাস যেমন রাজকীয় তেমনি দীর্ঘস্থায়ী। জুমার নামাজে মেখে গেলে সারাদিন পোশাকে চমৎকার একটা সুবাস জড়িয়ে থাকে। সাথে নেওয়া আফগান টুপিটির কাপড় ও ফিটিং প্রিমিয়াম ছিল। জাকারিয়া ভাইয়ের সততা ও ব্যবহার প্রশংসনীয়।"
+          </p>
+          <div class="review-date"><i class="fa-regular fa-clock"></i> ৩ দিন আগে</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">রা</div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">ইঞ্জিনিয়ার রাশেদ মাহমুদ</h4>
+              <span class="reviewer-loc"><i class="fa-solid fa-location-dot"></i> রোড ৮/এ, ধানমন্ডি, ঢাকা</span>
+            </div>
+            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> ভেরিফাইড ক্রেতা</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span class="rating-text">৫.০ / ৫</span>
+          </div>
+          <div class="review-product">
+            <i class="fa-solid fa-bag-shopping gold-text"></i> <span>কেনা পণ্য: <strong>Sundarban Raw Honey (২ কেজি)</strong></span>
+          </div>
+          <p class="review-comment">
+            "অনলাইনে আসল খাঁটি মধু পাওয়া এখন বড় ভাগ্যের বিষয়। কিন্তু Hasaan Bazaar-এর সুন্দরবনের চাকের মধু মুখে দিতেই খাঁটি কাঁচা মধুর স্বাদ ও প্রাকৃতিক সুবাস পেয়েছি। বয়োবৃদ্ধ আম্মা প্রতিদিন সকালে গরম পানির সাথে খাচ্ছেন। প্যাকেজিংও খুব শক্ত ছিল।"
+          </p>
+          <div class="review-date"><i class="fa-regular fa-clock"></i> ৫ দিন আগে</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">তা</div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">মুহাম্মদ তারিক হাসান</h4>
+              <span class="reviewer-loc"><i class="fa-solid fa-location-dot"></i> জিইসি মোড়, চট্টগ্রাম</span>
+            </div>
+            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> ভেরিফাইড ক্রেতা</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span class="rating-text">৫.০ / ৫</span>
+          </div>
+          <div class="review-product">
+            <i class="fa-solid fa-bag-shopping gold-text"></i> <span>কেনা পণ্য: <strong>Khadi Heritage Cotton Panjabi</strong></span>
+          </div>
+          <p class="review-comment">
+            "খাদি সুতি পাঞ্জাবিটির ফেব্রিক অত্যন্ত আরামদায়ক ও ব্রিদেবল। গরমে নামাজ পড়া বা দৈনন্দিন পরার জন্য অসাধারণ। স্টিচিং ও বোতামের ফিনিশিং খুব নিখুঁত। সাইজ চার্ট দেখে অর্ডার দিয়েছিলাম, একদম পারফেক্ট হয়েছে। জাযাকাল্লাহু খাইরান।"
+          </p>
+          <div class="review-date"><i class="fa-regular fa-clock"></i> ১ সপ্তাহ আগে</div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">তান</div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">তানভীর আহমেদ চৌধুরী</h4>
+              <span class="reviewer-loc"><i class="fa-solid fa-location-dot"></i> শিবগঞ্জ, সিলেট</span>
+            </div>
+            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> ভেরিফাইড ক্রেতা</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span class="rating-text">৫.০ / ৫</span>
+          </div>
+          <div class="review-product">
+            <i class="fa-solid fa-bag-shopping gold-text"></i> <span>কেনা পণ্য: <strong>Khaltat Night 100ml & Kashmiri Sidr Honey</strong></span>
+          </div>
+          <p class="review-comment">
+            "ক্যাশ অন ডেলিভারিতে পার্সেল খুলে দেখে মূল্য পরিশোধ করার সুযোগটা খুবই ভালো লেগেছে। খালিয়াত নাইট আতরের ঘ্রাণ অনেক দূর পর্যন্ত পৌঁছায় এবং কাশ্মীরি সিদর মধুর ঘনত্ব অতুলনীয়। অর্ডার দেওয়ার ৪৮ ঘণ্টার মধ্যেই ডেলিভারি পেয়েছি।"
+          </p>
+          <div class="review-date"><i class="fa-regular fa-clock"></i> ২ সপ্তাহ আগে</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map & Physical Location Section -->
+  <section class="section location-section" id="locationSection">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle"><i class="fa-solid fa-map-location-dot gold-text"></i> আমাদের ঠিকানা ও শোরুম</div>
+        <h2 class="section-title">সরাসরি দেখা ও যোগাযোগের ঠিকানা</h2>
+        <div class="section-divider">
+          <span></span><i class="fa-solid fa-star gold-text"></i><span></span>
+        </div>
+      </div>
+
+      <div class="location-grid">
+        <!-- Left: Contact Details Cards -->
+        <div class="location-info-cards">
+          <div class="loc-card">
+            <div class="loc-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="loc-details">
+              <h4>অফিস ও শোরুমের ঠিকানা</h4>
+              <p>সাতারকুল, উত্তর বাড্ডা, ঢাকা-১২১২, বাংলাদেশ।</p>
+              <a href="https://maps.google.com/?q=Satarkul,+North+Badda,+Dhaka,+Bangladesh" target="_blank" class="map-link-btn">
+                <i class="fa-solid fa-diamond-turn-right"></i> গুগল ম্যাপে ডিরেকশন দেখুন
+              </a>
+            </div>
+          </div>
+
+          <div class="loc-card">
+            <div class="loc-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="loc-details">
+              <h4>সরাসরি কল ও অর্ডার</h4>
+              <p>যেকোনো অনুসন্ধান বা দ্রুত অর্ডারে কল দিন:</p>
+              <a href="tel:+8801738625136" class="phone-link">+৮৮০ ১৭৩৮-৬২৫১৩৬</a>
+            </div>
+          </div>
+
+          <div class="loc-card">
+            <div class="loc-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="loc-details">
+              <h4>WhatsApp কাস্টমার সাপোর্ট</h4>
+              <p>২৪ ঘণ্টা সরাসরি চ্যাট ও মেসেজ সাপোর্ট:</p>
+              <a href="https://wa.me/8801738625136" target="_blank" class="wa-link">+৮৮০ ১৭৩৮-৬২৫১৩৬ (WhatsApp)</a>
+            </div>
+          </div>
+
+          <div class="loc-card">
+            <div class="loc-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="loc-details">
+              <h4>অফিস সময়সূচি</h4>
+              <p>প্রতিদিন সকাল ৯:০০ টা থেকে রাত ১০:০০ টা পর্যন্ত খোলা।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Google Map Embed -->
+        <div class="map-wrapper">
+          <iframe 
+            title="Hasaan Bazaar Location Map"
+            src="https://maps.google.com/maps?q=Satarkul,%20North%20Badda,%20Dhaka,%20Bangladesh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & Owner Profile Section (পৃষ্ঠার নিচে স্বত্বাধিকারী পরিচিতি ও ছবি) -->
+  <section class="section owner-section" id="ownerSection">
+    <div class="container">
+      <div class="owner-card">
+        <div class="owner-img-wrapper">
+          <div class="owner-avatar-container">
+            <img 
+              src="owner.png" 
+              id="ownerImg" 
+              onerror="if(this.src.indexOf('owner.jpg')===-1){this.src='owner.jpg';}else{this.onerror=null;this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80';}" 
+              alt="জাকারিয়া তানিম (Jakaria Tanim) - প্রতিষ্ঠাতা ও প্রধান নির্বাহী, Hasaan Bazaar" 
+              class="owner-avatar-img"
+            >
+            <span class="owner-verified-badge" title="অফিশিয়াল ভেরিফাইড ওনার">
+              <i class="fa-solid fa-circle-check"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="owner-content">
+          <div class="owner-header-badge">
+            <i class="fa-solid fa-award gold-text"></i> ওনার পরিচিতি ও বার্তা (Founder's Message)
+          </div>
+          <h2 class="owner-name">জাকারিয়া তানিম <span class="en-name">(Jakaria Tanim)</span></h2>
+          <div class="owner-designation">
+            <span class="role-pill">প্রতিষ্ঠাতা ও প্রধান নির্বাহী (Founder & CEO)</span>
+            <span class="brand-pill">Hasaan Bazaar</span>
+          </div>
+
+          <div class="owner-statement">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>
+              আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ। <strong>Hasaan Bazaar</strong>-এর শুভ সূচনা হয়েছে হালাল রুজি অন্বেষণ এবং রাসুলুল্লাহ (সা.)-এর সুন্নাহ ভিত্তিক মার্জিত জীবনধারার উপাদান প্রতিটি ধর্মপ্রাণ পরিবারের কাছে সর্বোচ্চ সততা ও আমানতদারিতার সাথে পৌঁছে দেওয়ার পবিত্র ব্রত নিয়ে। আমাদের প্রতিটি আতর, কটন পাঞ্জাবি, ঐতিহ্যবাহী টুপি এবং প্রাকৃতিক চাকের খাঁটি মধু আমি নিজে গুণগত মান যাচাই করে সরাসরি নির্ভরযোগ্য সোর্স থেকে সংগ্রহ করি। গ্রাহকদের অটুট আস্থা ও দোয়াই আমাদের মূল শক্তি।
+            </p>
+          </div>
+
+          <div class="owner-contact-row">
+            <a href="tel:+8801738625136" class="owner-contact-btn">
+              <i class="fa-solid fa-phone"></i>
+              <span>সরাসরি কল: +৮৮০ ১৭৩৮-৬২৫১৩৬</span>
+            </a>
+            <a href="https://wa.me/8801738625136?text=আসসালামু%20আলাইকুম,%20আমি%20Hasaan%20Bazaar-এর%20প্রতিষ্ঠাতার%20সাথে%20কথা%20বলতে%20চাই।" target="_blank" class="owner-contact-btn owner-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp চ্যাট</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <!-- Brand Logo (Footer): 100% Transparent SVG Vector Logo -->
+        <a href="#" class="logo footer-logo hasaan-logo">
+          <div class="logo-box">
+            <img src="logo.svg" alt="Hasaan Bazaar Logo" class="custom-logo-file">
+          </div>
+          <div class="logo-text">
+            <span class="brand-name en-brand">Hasaan Bazaar</span>
+            <span class="brand-tagline">ELEGANCE OF SUNNAH</span>
+          </div>
+        </a>
+        <p class="footer-desc">
+          "Hasaan Bazaar" is your trusted destination for the Elegance of Sunnah. Providing 100% pure royal attar, handcrafted prayer caps, exclusive cotton panjabi, and authentic wild honey.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/8801738625136" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:+8801738625136" aria-label="Phone Call"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>ক্যাটাগরি সমূহ</h4>
+        <ul class="footer-links">
+          <li><a href="#featured" onclick="filterCategoryFromFooter('attar')">খাঁটি রয়্যাল উদ ও আতর</a></li>
+          <li><a href="#featured" onclick="filterCategoryFromFooter('tupi')">আফগান, জিন্নাহ ও ইসলামিক টুপি</a></li>
+          <li><a href="#featured" onclick="filterCategoryFromFooter('panjabi')">খাঁটি কটন ডিজাইনার পাঞ্জাবি</a></li>
+          <li><a href="#featured" onclick="filterCategoryFromFooter('honey')">সিদর, কালোজিরা ও প্রাকৃতিক মধু</a></li>
+          <li><a href="#featured">বিশেষ সুন্নাহ গিফট বক্স</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>প্রয়োজনীয় সেবা ও নীতি</h4>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)" onclick="openOrderTrackingModal()"><i class="fa-solid fa-truck-fast gold-text"></i> লাইভ অর্ডার ট্র্যাকিং (Track Order)</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('about')">আমাদের সম্পর্কে (About Us)</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('delivery')">ডেলিভারি পলিসি (ঢাকা ৮০৳ / বাইরে ১৫০৳)</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('refund')">রিটার্ন ও রিফান্ড নীতি (Return & Refund)</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('terms')">শর্তাবলী ও নীতিমালা (Terms of Service)</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('support')">হেল্প ও সাপোর্ট সেন্টার (Support Desk)</a></li>
+          <li><a href="javascript:void(0)" onclick="triggerPwaInstall()"><i class="fa-solid fa-mobile-screen-button gold-text"></i> 📱 অ্যাপ ইনস্টল করুন (Install App)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>যোগাযোগ ও ঠিকানা</h4>
+        <ul class="contact-info">
+          <li><i class="fa-solid fa-location-dot gold-text"></i> Satarkul, North Badda, Dhaka, Bangladesh</li>
+          <li><i class="fa-solid fa-phone gold-text"></i> <a href="tel:+8801738625136" style="color:inherit;">+৮৮০ ১৭৩৮-৬২৫১৩৬</a></li>
+          <li><i class="fa-brands fa-whatsapp gold-text"></i> <a href="https://wa.me/8801738625136" target="_blank" style="color:inherit;">+৮৮০ ১৭৩৮-৬২৫১৩৬ (WhatsApp)</a></li>
+          <li><i class="fa-solid fa-envelope gold-text"></i> <a href="mailto:support@hasaanbazaar.com" style="color:inherit;">support@hasaanbazaar.com</a></li>
+          <li><i class="fa-solid fa-clock gold-text"></i> প্রতিদিন সকাল ৯:০০ - রাত ১০:০০</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 HASAAN BAZAAR. All rights reserved. <button type="button" class="admin-stealth-trigger" onclick="requestAdminAccess()" title="Owner Access" aria-label="Admin Login"><i class="fa-solid fa-shield-halved"></i></button></p>
+        <div class="payment-methods">
+          <span class="pay-tag"><i class="fa-solid fa-money-bill-wave"></i> ক্যাশ অন ডেলিভারি</span>
+          <span class="pay-tag"><i class="fa-solid fa-credit-card"></i> বিকাশ / নগদ / রকেট</span>
+          <span class="pay-tag"><i class="fa-solid fa-shield-check"></i> ১০০% নিরাপদ চেকআউট</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer with Delivery & WhatsApp Checkout -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title">
+        <i class="fa-solid fa-bag-shopping gold-text"></i>
+        <h3>Hasaan Bazaar — শপিং ব্যাগ</h3>
+      </div>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="কার্ট বন্ধ করুন">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Cart Footer with Delivery Form & WhatsApp Order -->
+    <div class="cart-footer" id="cartFooter">
+      
+      <!-- Delivery Charge Selector -->
+      <div class="delivery-section">
+        <label class="section-label"><i class="fa-solid fa-truck-ramp-box gold-text"></i> ডেলিভারি এলাকা সিলেক্ট করুন:</label>
+        <div class="delivery-options">
+          <label class="delivery-option active" id="optDhakaInside">
+            <input type="radio" name="deliveryArea" value="80" checked onchange="updateDeliveryCharge(80)">
+            <div class="option-info">
+              <span class="option-title">ঢাকার ভেতরে</span>
+              <span class="option-price">৳ ৮০</span>
+            </div>
+          </label>
+          <label class="delivery-option" id="optDhakaOutside">
+            <input type="radio" name="deliveryArea" value="150" onchange="updateDeliveryCharge(150)">
+            <div class="option-info">
+              <span class="option-title">ঢাকার বাইরে</span>
+              <span class="option-price">৳ ১৫০</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Customer Checkout Details Form -->
+      <div class="customer-info-form">
+        <label class="section-label"><i class="fa-solid fa-user-check gold-text"></i> অর্ডারের জন্য আপনার তথ্য দিন:</label>
+        <div class="form-group">
+          <input type="text" id="custName" placeholder="আপনার পুরো নাম *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="custPhone" placeholder="মোবাইল নম্বর (যেমন: 017xxxxxxxx) *" required>
+        </div>
+        <div class="form-group">
+          <textarea id="custAddress" rows="2" placeholder="পূর্ণ ঠিকানা (বাসা/রোড, এলাকা, জেলা) *" required></textarea>
+        </div>
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div class="payment-method-section">
+        <label class="section-label"><i class="fa-solid fa-credit-card gold-text"></i> পেমেন্ট মেথড নির্বাচন করুন:</label>
+        <div class="payment-options">
+          <label class="payment-option active" id="optCOD">
+            <input type="radio" name="paymentMethod" value="Cash on Delivery" checked onchange="updatePaymentMethod('cod')">
+            <div class="option-info">
+              <span class="option-title"><i class="fa-solid fa-hand-holding-dollar gold-text"></i> ক্যাশ অন ডেলিভারি</span>
+              <span class="option-desc">পণ্য দেখে মূল্য পরিশোধ</span>
+            </div>
+          </label>
+          <label class="payment-option" id="optBkash">
+            <input type="radio" name="paymentMethod" value="bKash / Nagad" onchange="updatePaymentMethod('bkash')">
+            <div class="option-info">
+              <span class="option-title"><i class="fa-solid fa-mobile-screen gold-text"></i> বিকাশ / নগদ</span>
+              <span class="option-desc">০১৭৩৮-৬২৫১৩৬</span>
+            </div>
+          </label>
+        </div>
+        <div id="bkashTrxBox" class="bkash-trx-box" style="display: none;">
+          <input type="text" id="custTrxId" placeholder="বিকাশ বা নগদ ট্রানজেকশন আইডি (TrxID)">
+          <small class="trx-hint"><i class="fa-solid fa-circle-info gold-text"></i> ব্যক্তিগত বিকাশ/নগদে সেন্ড মানি করে TrxID টি দিন</small>
+        </div>
+      </div>
+
+      <!-- Pricing Summary Breakdown -->
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>পণ্যের মোট মূল্য:</span>
+          <span id="cartSubtotalPrice">৳ ০</span>
+        </div>
+        <div class="summary-row">
+          <span>ডেলিভারি চার্জ:</span>
+          <span id="cartDeliveryCharge">৳ ৮০</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>সর্বমোট প্রদেয়:</span>
+          <span id="cartTotalPrice">৳ ০</span>
+        </div>
+      </div>
+
+      <!-- Professional Confirm Order Button -->
+      <button class="btn btn-primary checkout-btn" id="confirmOrderBtn" onclick="handleProfessionalCheckout()">
+        <i class="fa-solid fa-lock"></i>
+        <span>অর্ডার কনফার্ম করুন (Place Order)</span>
+      </button>
+      <p class="checkout-note"><i class="fa-solid fa-shield-halved"></i> ক্যাশ অন ডেলিভারি — সম্পূর্ণ নিরাপদ ও বিশ্বস্ত চেকআউট।</p>
+    </div>
+  </aside>
+
+  <!-- ================= PRODUCT DETAILS QUICK VIEW MODAL ================= -->
+  <div class="modal-overlay" id="productModalOverlay"></div>
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <button class="modal-close-btn" id="closeProductModalBtn" aria-label="বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-body" id="productModalBody">
+      <!-- Dynamic product details loaded via script.js -->
+    </div>
+  </div>
+
+  <!-- ================= POLICY & INFO POPUP MODAL ================= -->
+  <div class="modal-overlay" id="policyModalOverlay"></div>
+  <div class="policy-modal" id="policyModal" role="dialog" aria-modal="true">
+    <div class="policy-modal-header">
+      <h3 id="policyModalTitle"><i class="fa-solid fa-shield-halved gold-text"></i> পলিসি ও নীতিমালা</h3>
+      <button class="modal-close-btn" id="closePolicyModalBtn" aria-label="বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="policy-modal-tabs">
+      <button class="p-tab-btn active" data-policy="about">আমাদের সম্পর্কে</button>
+      <button class="p-tab-btn" data-policy="delivery">ডেলিভারি পলিসি</button>
+      <button class="p-tab-btn" data-policy="refund">রিটার্ন ও রিফান্ড</button>
+      <button class="p-tab-btn" data-policy="support">সাপোর্ট ও যোগাযোগ</button>
+      <button class="p-tab-btn" data-policy="terms">শর্তাবলী</button>
+    </div>
+    <div class="policy-modal-content" id="policyModalContent">
+      <!-- Policy text injected dynamically -->
+    </div>
+  </div>
+
+  <!-- ================= PROFESSIONAL ORDER SUCCESS & INVOICE MODAL ================= -->
+  <div class="modal-overlay" id="orderSuccessOverlay"></div>
+  <div class="order-success-modal" id="orderSuccessModal" role="dialog" aria-modal="true">
+    <button class="modal-close-btn" onclick="closeOrderSuccessModal()" aria-label="বন্ধ করুন" style="position: absolute; top: 14px; right: 16px; z-index: 50;"><i class="fa-solid fa-xmark"></i></button>
+    <div class="invoice-container" id="invoicePrintArea">
+      <!-- Invoice Store Header -->
+      <div class="invoice-header">
+        <div class="invoice-brand">
+          <h2 class="invoice-store-name">Hasaan Bazaar</h2>
+          <span class="invoice-store-tagline">ELEGANCE OF SUNNAH</span>
+          <p class="invoice-store-address"><i class="fa-solid fa-location-dot"></i> Satarkul, North Badda, Dhaka | Helpline: +880 1738-625136</p>
+        </div>
+        <div class="invoice-badge-box">
+          <span class="invoice-type-pill">অফিশিয়াল ক্যাশ মেমো / ইনভয়েস</span>
+          <div class="invoice-id-display">
+            অর্ডার নং: <strong id="successOrderId">#HB-000000</strong>
+          </div>
+          <div class="invoice-date-display" id="successOrderTime">-</div>
+        </div>
+      </div>
+
+      <div class="success-banner no-print">
+        <div class="success-icon-box">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="success-title">আলহামদুলিল্লাহ! আপনার অর্ডারটি নিশ্চিত হয়েছে</h3>
+        <p class="success-subtitle">Hasaan Bazaar-এ অর্ডার করার জন্য আপনাকে আন্তরিক ধন্যবাদ। শীঘ্রই আমাদের টিম আপনার সাথে যোগাযোগ করবে।</p>
+      </div>
+
+      <!-- Customer & Shipping Summary Grid -->
+      <div class="invoice-details-grid">
+        <div class="invoice-detail-card">
+          <span class="detail-label"><i class="fa-solid fa-user gold-text"></i> গ্রাহকের নাম:</span>
+          <strong id="successCustName">-</strong>
+        </div>
+        <div class="invoice-detail-card">
+          <span class="detail-label"><i class="fa-solid fa-phone gold-text"></i> মোবাইল নম্বর:</span>
+          <strong id="successCustPhone">-</strong>
+        </div>
+        <div class="invoice-detail-card full-width">
+          <span class="detail-label"><i class="fa-solid fa-map-location-dot gold-text"></i> ডেলিভারি ঠিকানা:</span>
+          <span id="successCustAddress">-</span>
+        </div>
+        <div class="invoice-detail-card">
+          <span class="detail-label"><i class="fa-solid fa-money-bill-wave gold-text"></i> পেমেন্ট মেথড:</span>
+          <span id="successPaymentMethod" class="badge-pill">ক্যাশ অন ডেলিভারি</span>
+        </div>
+        <div class="invoice-detail-card">
+          <span class="detail-label"><i class="fa-solid fa-truck-ramp-box gold-text"></i> ডেলিভারি এলাকা:</span>
+          <span id="successDeliveryArea">ঢাকার ভেতরে</span>
+        </div>
+      </div>
+
+      <!-- Ordered Items Breakdown Table -->
+      <div class="invoice-items-table-wrapper">
+        <table class="invoice-items-table">
+          <thead>
+            <tr>
+              <th>ক্রম</th>
+              <th>পণ্যের নাম ও বিবরণ</th>
+              <th class="text-center">পরিমাণ</th>
+              <th class="text-right">একক মূল্য</th>
+              <th class="text-right">মোট টাকা</th>
+            </tr>
+          </thead>
+          <tbody id="successItemsTableBody">
+            <!-- Dynamically populated -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="text-right">পণ্যের মোট মূল্য (Subtotal):</td>
+              <td class="text-right" id="successSubtotal">৳ ০</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="text-right">ডেলিভারি চার্জ (Delivery Charge):</td>
+              <td class="text-right" id="successDelivery">৳ ৮০</td>
+            </tr>
+            <tr class="grand-total-row">
+              <td colspan="4" class="text-right">সর্বমোট প্রদেয় মূল্য (Grand Total):</td>
+              <td class="text-right gold-text" id="successTotal">৳ ০</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Delivery Notice -->
+      <div class="delivery-notice-box">
+        <i class="fa-solid fa-circle-info gold-text"></i>
+        <div>
+          <strong>ডেলিভারি ও ক্যাশ অন ডেলিভারি সংক্রান্ত নিয়ম:</strong>
+          <p>আগামী ২৪ থেকে ৪৮ ঘণ্টার মধ্যে আমাদের ডেলিভারি প্রতিনিধি আপনার দেওয়া ঠিকানায় পণ্যটি পৌঁছে দেবে। ডেলিভারির সময় পার্সেল খুলে দেখে সন্তুষ্ট হয়ে মূল্য পরিশোধ করুন।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Action Buttons (Hidden when printing invoice) -->
+    <div class="success-actions no-print">
+      <button type="button" class="btn btn-track-order-success" onclick="openOrderTrackingModal(currentCompletedOrder ? currentCompletedOrder.orderId : '')" title="আপনার অর্ডার লাইভ ট্র্যাক করুন">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>অর্ডার ট্র্যাক করুন</span>
+      </button>
+      <button type="button" class="btn btn-pdf-download" onclick="downloadInvoicePDF()" title="ক্যাশ মেমো PDF ফাইল ডাউনলোড করুন">
+        <i class="fa-solid fa-file-pdf"></i>
+        <span>PDF ডাউনলোড</span>
+      </button>
+      <button type="button" class="btn btn-secondary print-invoice-btn" onclick="printInvoice()" title="প্রিন্ট প্রিভিউ ওপেন করুন">
+        <i class="fa-solid fa-print"></i>
+        <span>প্রিন্ট করুন</span>
+      </button>
+      <button type="button" class="btn btn-primary" onclick="closeOrderSuccessModal()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>আরও কেনাকাটা করুন</span>
+      </button>
+      <button type="button" class="btn btn-wa-backup" onclick="sendInvoiceToWhatsApp()" title="ঐচ্ছিক WhatsApp কপি">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp কপি</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SECURE ADMIN AUTHENTICATION MODAL ================= -->
+  <div class="admin-auth-overlay" id="adminAuthOverlay" onclick="closeAdminAuthModal(event)" style="display: none;">
+    <div class="admin-auth-card" onclick="event.stopPropagation()">
+      <div class="admin-auth-header">
+        <div class="auth-icon-circle"><i class="fa-solid fa-user-shield"></i></div>
+        <h3>অ্যাডমিন সিকিউরিটি অ্যাক্সেস</h3>
+        <p>শুধুমাত্র স্বত্বাধিকারী / ওনারের জন্য সংরক্ষিত</p>
+      </div>
+      <form class="admin-auth-form" onsubmit="handleAdminLogin(event)">
+        <div class="form-group auth-group">
+          <label for="adminUsernameInput"><i class="fa-solid fa-user-tie gold-text"></i> ইউজারনেম (Username):</label>
+          <div class="auth-input-wrapper">
+            <input type="text" id="adminUsernameInput" placeholder="ইউজারনেম লিখুন..." autocomplete="username" required>
+          </div>
+        </div>
+        <div class="form-group auth-group">
+          <label for="adminPasswordInput"><i class="fa-solid fa-lock gold-text"></i> পাসওয়ার্ড (Password):</label>
+          <div class="auth-input-wrapper">
+            <input type="password" id="adminPasswordInput" placeholder="পাসওয়ার্ড লিখুন..." autocomplete="current-password" required>
+            <button type="button" class="btn-toggle-pin" onclick="togglePassVisibility()" aria-label="পাসওয়ার্ড দেখুন">
+              <i class="fa-regular fa-eye" id="passEyeIcon"></i>
+            </button>
+          </div>
+          <div class="auth-error-msg" id="authErrorMsg" style="display: none;">
+            <i class="fa-solid fa-circle-exclamation"></i> ইউজারনেম বা পাসওয়ার্ডটি সঠিক নয়! আবার চেষ্টা করুন।
+          </div>
+        </div>
+        <div class="admin-auth-buttons">
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-unlock-keyhole"></i> লগইন করুন
+          </button>
+          <button type="button" class="btn btn-secondary btn-block" onclick="closeAdminAuthModal()">
+            বাতিল
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN CONTROL & PRODUCT MANAGEMENT MODAL ================= -->
+  <div class="modal-overlay" id="adminModalOverlay"></div>
+  <div class="admin-modal" id="adminOrdersModal" role="dialog" aria-modal="true">
+    <div class="admin-modal-header">
+      <div class="admin-title">
+        <i class="fa-solid fa-sliders gold-text"></i>
+        <h3>Hasaan Bazaar — অ্যাডমিন ও প্রোডাক্ট কন্ট্রোল প্যানেল</h3>
+      </div>
+      <div class="admin-header-right">
+        <button type="button" class="btn-admin-logout" onclick="adminLogout()" title="লগআউট করুন">
+          <i class="fa-solid fa-right-from-bracket"></i> <span>লগআউট</span>
+        </button>
+        <button class="modal-close-btn" onclick="closeAdminOrdersModal()" aria-label="বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+    
+    <!-- Admin Tabs Navigation -->
+    <div class="admin-tab-nav">
+      <button type="button" class="admin-tab-btn active" id="tabBtnOrders" onclick="switchAdminTab('orders')">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <span>অর্ডার হিস্ট্রি (<strong id="adminOrdersBadgeCount">০</strong>)</span>
+      </button>
+      <button type="button" class="admin-tab-btn" id="tabBtnProducts" onclick="switchAdminTab('products')">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <span>পণ্য যোগ ও ম্যানেজমেন্ট (<strong id="adminProductsBadgeCount">১৬</strong>)</span>
+      </button>
+      <button type="button" class="admin-tab-btn" id="tabBtnDatabase" onclick="switchAdminTab('database')">
+        <i class="fa-solid fa-database"></i>
+        <span>ক্লাউড ডাটাবেস (Supabase)</span>
+      </button>
+    </div>
+
+    <div class="admin-modal-body">
+      <!-- TAB 1: ORDERS MANAGEMENT -->
+      <div class="admin-tab-content active" id="adminTabOrders">
+        <div class="admin-stats-bar">
+          <div class="stat-card">
+            <span class="stat-label">সর্বমোট অর্ডার</span>
+            <strong class="stat-num" id="adminTotalOrders">০</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">মোট বিক্রির পরিমাণ</span>
+            <strong class="stat-num gold-text" id="adminTotalRevenue">৳ ০</strong>
+          </div>
+          <div class="admin-quick-actions">
+            <button type="button" class="btn-sm btn-change-pin" onclick="promptChangeAdminCredentials()" title="ইউজারনেম ও পাসওয়ার্ড পরিবর্তন করুন"><i class="fa-solid fa-user-lock"></i> ইউজার ও পাসওয়ার্ড চেঞ্জ</button>
+            <button class="btn-sm btn-export" onclick="exportOrdersToCSV()"><i class="fa-solid fa-file-csv"></i> এক্সেল এক্সপোর্ট</button>
+            <button class="btn-sm btn-clear-all" onclick="clearAllOrders()"><i class="fa-solid fa-trash-can"></i> হিস্ট্রি ক্লিয়ার</button>
+          </div>
+        </div>
+
+        <!-- Google Sheets & Gmail Webhook Integration Panel -->
+        <div class="admin-webhook-box">
+          <div class="webhook-header" onclick="toggleWebhookSettings()">
+            <span><i class="fa-brands fa-google gold-text"></i> Google Sheets ও Gmail অটো-নোটিফিকেশন সেটিংস</span>
+            <i class="fa-solid fa-chevron-down" id="webhookToggleIcon"></i>
+          </div>
+          <div class="webhook-form" id="webhookSettingsForm" style="display: none;">
+            <p class="webhook-help-text">Google Apps Script Web App URL টি এখানে পেস্ট করে সেভ করুন। এরপর যেকোনো গ্রাহক ওয়েবসাইটে অর্ডার কনফার্ম করলে তাৎক্ষণিকভাবে আপনার <strong>Google Sheet</strong>-এ রো যুক্ত হবে এবং <strong>Gmail</strong>-এ পুর্ণাঙ্গ মেমো নোটিফিকেশন চলে যাবে।</p>
+            <div class="webhook-input-group">
+              <input type="url" id="googleSheetWebhookUrl" placeholder="https://script.google.com/macros/s/.../exec">
+              <button type="button" class="btn-webhook-save" onclick="saveGoogleWebhookUrl()"><i class="fa-solid fa-floppy-disk"></i> সেভ করুন</button>
+              <button type="button" class="btn-webhook-test" onclick="testGoogleWebhook()"><i class="fa-solid fa-paper-plane"></i> টেস্ট পাঠান</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-orders-table-wrapper" id="adminOrdersContainer">
+          <!-- Dynamically rendered orders table -->
+        </div>
+      </div>
+
+      <!-- TAB 2: PRODUCT MANAGEMENT & ADD NEW PRODUCT -->
+      <div class="admin-tab-content" id="adminTabProducts" style="display: none;">
+        <div class="admin-product-form-box">
+          <div class="admin-form-header">
+            <h4><i class="fa-solid fa-circle-plus gold-text"></i> নতুন পণ্য যুক্ত করুন (Add New Product)</h4>
+            <span class="admin-form-hint">ফর্মটি পূরণ করে 'পণ্য যুক্ত ও লাইভ করুন' বাটনে চাপলেই ওয়েবসাইটে সরাসরি পণ্য প্রদর্শিত হবে</span>
+          </div>
+
+          <form id="newProductForm" onsubmit="event.preventDefault(); handleAddNewProduct();">
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="newProdName">পণ্যের নাম *</label>
+                <input type="text" id="newProdName" placeholder="যেমন: Royal Amber Oud Attar" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="newProdCategory">ক্যাটাগরি *</label>
+                <select id="newProdCategory" onchange="handleCategoryChange(this.value)" required>
+                  <option value="attar">আতর ও সুগন্ধি</option>
+                  <option value="tupi">ইসলামিক টুপি</option>
+                  <option value="panjabi">প্রিমিয়াম পাঞ্জাবি</option>
+                  <option value="honey">খাঁটি প্রাকৃতিক মধু</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="newProdPrice">বর্তমান বিক্রয় মূল্য (৳) *</label>
+                <input type="number" id="newProdPrice" placeholder="যেমন: 1250" min="1" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="newProdOriginalPrice">পূর্বের মূল্য / ডিসকাউন্ট (৳, ঐচ্ছিক)</label>
+                <input type="number" id="newProdOriginalPrice" placeholder="যেমন: 1600" min="0">
+              </div>
+
+              <div class="admin-form-group">
+                <label for="newProdUnit">পরিমাপের একক *</label>
+                <select id="newProdUnit" required>
+                  <option value="টি">টি (Piece)</option>
+                  <option value="কেজি">কেজি (kg - মধুর জন্য প্রযোজ্য)</option>
+                  <option value="গ্রাম">গ্রাম (gram)</option>
+                  <option value="মিলি">মিলি (ml)</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="newProdBadge">পণ্যের ব্যাজ (ঐচ্ছিক)</label>
+                <input type="text" id="newProdBadge" placeholder="যেমন: বেস্ট সেলার, নতুন কালেকশন, অফার">
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>পণ্যের ছবি (ছবি আপলোড করুন অথবা অনলাইন লিঙ্ক দিন) *</label>
+                <div class="admin-img-upload-box">
+                  <div class="img-input-row">
+                    <label class="file-upload-btn">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <span>মোবাইল বা পিসি থেকে ছবি বাছুন</span>
+                      <input type="file" id="newProdFile" accept="image/*" onchange="previewProductUpload(this)" style="display:none;">
+                    </label>
+                    <span class="or-separator">অথবা</span>
+                    <input type="url" id="newProdUrl" placeholder="অনলাইন ইমেজ লিঙ্ক (https://...)" oninput="previewProductUrl(this.value)">
+                  </div>
+                  <div class="img-preview-box" id="newProdImgPreviewWrap" style="display: none;">
+                    <img id="newProdImgPreview" src="" alt="Preview">
+                    <span class="preview-tag"><i class="fa-solid fa-check"></i> ছবি সিলেক্ট হয়েছে</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label for="newProdDesc">পণ্যের আকর্ষণীয় বিবরণ *</label>
+                <textarea id="newProdDesc" rows="3" placeholder="পণ্যটির গুণাগুণ, খাঁটি বৈশিষ্ট্য এবং বিবরণ লিখুন..." required></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label for="newProdFeatures">প্রধান বৈশিষ্ট্যসমূহ (প্রতিটি লাইনে ১টি করে লিখুন)</label>
+                <textarea id="newProdFeatures" rows="3" placeholder="১০০% খাঁটি ও নির্ভেজাল উপাদান&#10;লং-লাস্টিং সুবাস ও চমৎকার ফিনিশিং&#10;প্রিমিয়াম সুন্নাহ উপহার বক্স"></textarea>
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button type="submit" class="btn btn-save-prod">
+                <i class="fa-solid fa-plus-circle"></i>
+                <span>পণ্য যুক্ত ও লাইভ করুন</span>
+              </button>
+              <button type="reset" class="btn btn-reset-form" onclick="resetProductForm()">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span>ফর্ম ক্লিয়ার</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Current Products List -->
+        <div class="admin-products-list-wrapper">
+          <div class="admin-list-header">
+            <h4><i class="fa-solid fa-list-check gold-text"></i> ওয়েবসাইটে লাইভ থাকা সকল পণ্য</h4>
+            <button type="button" class="btn-sm btn-restore-default" onclick="resetDefaultProducts()" title="সব পরিবর্তন মুছে আসল ১৬টি পণ্যে ফেরত যান">
+              <i class="fa-solid fa-arrows-rotate"></i> ডিফল্ট পণ্য রিস্টোর করুন
+            </button>
+          </div>
+          <div class="admin-products-table-scroll" id="adminProductsContainer">
+            <!-- Dynamically populated products table -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: CLOUD DATABASE & SUPABASE SYNC -->
+      <div class="admin-tab-content" id="adminTabDatabase" style="display: none;">
+        <div class="admin-database-box">
+          <div class="admin-database-header">
+            <div class="db-header-title">
+              <i class="fa-solid fa-cloud-bolt gold-text"></i>
+              <div>
+                <h4>Supabase সেন্ট্রাল ক্লাউড ডাটাবেস ও রিয়েলটাইম সিঙ্ক</h4>
+                <p>এখানে আপনার Supabase প্রজেক্ট কানেক্ট করলে অর্ডার ও প্রোডাক্ট যেকোনো ডিভাইস থেকে লাইভ সিঙ্ক হবে।</p>
+              </div>
+            </div>
+            <div class="db-status-pill" id="dbStatusPill">
+              <span class="status-indicator status-offline" id="dbStatusIndicator"></span>
+              <span id="dbStatusText">লোকাল স্টোরেজ মোড</span>
+            </div>
+          </div>
+
+          <!-- Configuration Form -->
+          <div class="db-config-grid">
+            <div class="admin-form-group">
+              <label for="supabaseProjectUrl">
+                <i class="fa-solid fa-globe gold-text"></i> Supabase Project URL *
+              </label>
+              <input type="url" id="supabaseProjectUrl" placeholder="https://xyzcompany.supabase.co" autocomplete="off">
+              <small class="form-hint">Supabase ড্যাশবোর্ড ➔ Project Settings ➔ API ➔ Project URL</small>
+            </div>
+
+            <div class="admin-form-group">
+              <label for="supabaseAnonKey">
+                <i class="fa-solid fa-key gold-text"></i> Supabase Public Anon Key *
+              </label>
+              <input type="password" id="supabaseAnonKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." autocomplete="off">
+              <small class="form-hint">Supabase ড্যাশবোর্ড ➔ Project Settings ➔ API ➔ Project API Keys (anon public)</small>
+            </div>
+          </div>
+
+          <div class="db-actions-row">
+            <button type="button" class="btn btn-primary" onclick="saveAndConnectSupabase()">
+              <i class="fa-solid fa-plug-circle-check"></i>
+              <span>কানেকশন সেভ ও টেস্ট করুন</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="seedCatalogToSupabase()" id="btnSeedCatalog">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span>সব প্রোডাক্ট ক্লাউডে আপলোড করুন (Sync Catalog)</span>
+            </button>
+            <button type="button" class="btn-sm btn-clear-all" onclick="disconnectSupabase()">
+              <i class="fa-solid fa-link-slash"></i>
+              <span>ডিসকানেক্ট (লোকাল মোড)</span>
+            </button>
+          </div>
+
+          <!-- SQL Schema Helper Accordion -->
+          <div class="db-sql-accordion">
+            <div class="db-sql-header" onclick="toggleSqlAccordion()">
+              <span><i class="fa-solid fa-terminal gold-text"></i> Supabase টেবিল তৈরির SQL স্ক্রিপ্ট (এক ক্লিকে কপি করুন)</span>
+              <i class="fa-solid fa-chevron-down" id="sqlToggleIcon"></i>
+            </div>
+            <div class="db-sql-body" id="dbSqlBody" style="display: none;">
+              <p class="sql-info">আপনার Supabase প্রজেক্টে ঢুকে বাম পাশের <strong>SQL Editor</strong>-এ গিয়ে নিচের কোডটি পেস্ট করে <strong>Run</strong> চাপুন। স্বয়ংক্রিয়ভাবে সব টেবিল ও পলিসি সক্রিয় হয়ে যাবে:</p>
+              <div class="sql-code-container">
+                <button type="button" class="btn-copy-sql" onclick="copySupabaseSql()"><i class="fa-solid fa-copy"></i> কোড কপি করুন</button>
+                <pre class="sql-code-block"><code id="supabaseSqlCodeBlock">-- ১. প্রোডাক্ট টেবিল তৈরি
+CREATE TABLE IF NOT EXISTS public.products (
+    id BIGINT PRIMARY KEY,
+    name TEXT NOT NULL,
+    category TEXT NOT NULL,
+    category_name TEXT NOT NULL,
+    price NUMERIC NOT NULL,
+    original_price NUMERIC,
+    unit TEXT DEFAULT 'টি',
+    rating NUMERIC DEFAULT 5.0,
+    reviews INTEGER DEFAULT 0,
+    badge TEXT,
+    image TEXT NOT NULL,
+    description TEXT,
+    features JSONB DEFAULT '[]'::jsonb,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ২. অর্ডার টেবিল তৈরি
+CREATE TABLE IF NOT EXISTS public.orders (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    order_id TEXT UNIQUE NOT NULL,
+    customer_name TEXT NOT NULL,
+    customer_phone TEXT NOT NULL,
+    customer_address TEXT NOT NULL,
+    delivery_zone TEXT NOT NULL,
+    payment_method TEXT NOT NULL,
+    transaction_id TEXT,
+    items JSONB NOT NULL,
+    subtotal NUMERIC NOT NULL,
+    delivery_fee NUMERIC NOT NULL,
+    total NUMERIC NOT NULL,
+    status TEXT DEFAULT 'pending',
+    status_history JSONB DEFAULT '[]'::jsonb,
+    notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ৩. ইনডেক্সিং
+CREATE INDEX IF NOT EXISTS idx_orders_order_id ON public.orders(order_id);
+CREATE INDEX IF NOT EXISTS idx_orders_customer_phone ON public.orders(customer_phone);
+
+-- ৪. Row Level Security (RLS) ও পলিসি
+ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Public can view active products" ON public.products FOR SELECT USING (is_active = true);
+CREATE POLICY "Public can manage products" ON public.products FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public can create orders" ON public.orders FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public can track orders" ON public.orders FOR SELECT USING (true);
+CREATE POLICY "Public can update orders" ON public.orders FOR UPDATE USING (true) WITH CHECK (true);
+
+-- ৫. রিয়েলটাইম ব্রডকাস্ট চালু
+ALTER PUBLICATION supabase_realtime ADD TABLE public.orders;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.products;</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Cloud Sync Stats -->
+          <div class="db-cloud-stats-grid">
+            <div class="cloud-stat-card">
+              <div class="cloud-stat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div>
+                <span class="cloud-stat-label">ক্লাউড প্রোডাক্ট সংখ্যা</span>
+                <strong id="cloudProdCount">--</strong>
+              </div>
+            </div>
+            <div class="cloud-stat-card">
+              <div class="cloud-stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div>
+                <span class="cloud-stat-label">ক্লাউড মোট অর্ডার</span>
+                <strong id="cloudOrdersCount">--</strong>
+              </div>
+            </div>
+            <div class="cloud-stat-card">
+              <div class="cloud-stat-icon"><i class="fa-solid fa-bolt gold-text"></i></div>
+              <div>
+                <span class="cloud-stat-label">রিয়েল-টাইম কানেকশন</span>
+                <strong id="realtimeStateText">লিসেনার প্রস্তুত</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick Action Buttons (Call + WhatsApp) -->
+  <div class="floating-actions">
+    <a href="tel:+8801738625136" class="floating-btn floating-call" aria-label="সরাসরি ফোন কল">
+      <i class="fa-solid fa-phone"></i>
+      <span class="action-tooltip">সরাসরি কল দিন</span>
+    </a>
+    <a href="https://wa.me/8801738625136?text=আসসালামু%20আলাইকুম,%20আমি%20Hasaan%20Bazaar%20সম্পর্কে%20জানতে%20চাই।" target="_blank" class="floating-btn floating-whatsapp" aria-label="WhatsApp-এ চ্যাট করুন">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="action-tooltip">WhatsApp হেল্পলাইন</span>
+    </a>
+  </div>
+
+  <!-- Mobile App Bottom Navigation Bar (Visible only on mobile devices) -->
+  <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="মোবাইল নেভিগেশন বার">
+    <a href="#" class="mob-nav-item active" id="mobNavHome">
+      <i class="fa-solid fa-house"></i>
+      <span>হোম</span>
+    </a>
+    <a href="#categories" class="mob-nav-item" id="mobNavCat">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>ক্যাটাগরি</span>
+    </a>
+    <button type="button" class="mob-nav-item" id="mobNavSearch" onclick="focusMobileSearch()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>সার্চ</span>
+    </button>
+    <a href="https://wa.me/8801738625136?text=আসসালামু%20আলাইকুম,%20আমি%20Hasaan%20Bazaar%20সম্পর্কে%20জানতে%20চাই।" target="_blank" class="mob-nav-item" id="mobNavWa">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>হোয়াটসঅ্যাপ</span>
+    </a>
+    <button type="button" class="mob-nav-item mob-cart-trigger" id="mobNavCart" onclick="openCart()">
+      <div class="mob-cart-wrap">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="mob-cart-count" id="mobileCartCount">0</span>
+      </div>
+      <span>কার্ট</span>
+    </button>
+  </nav>
+
+  <!-- Closable App Install Pop-up Banner -->
+  <div class="app-install-popup" id="appInstallPopup" style="display: none;">
+    <div class="install-popup-card">
+      <button type="button" class="install-popup-close" onclick="closeInstallPopup()" aria-label="পপ-আপ বন্ধ করুন" title="বন্ধ করুন">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="install-popup-header">
+        <img src="icon-192.png" alt="Hasaan Bazaar App" class="install-popup-icon">
+        <div class="install-popup-title-wrap">
+          <h4 class="install-popup-title">Hasaan Bazaar App</h4>
+          <span class="install-popup-tag">Elegance of Sunnah</span>
+        </div>
+      </div>
+      <p class="install-popup-desc">
+        খাঁটি আতর, পাঞ্জাবি, টুপি ও মধু সহজে অর্ডার করতে অ্যাপটি আপনার ফোনে ইনস্টল রাখুন।
+      </p>
+      <div class="install-popup-buttons">
+        <button type="button" class="btn btn-primary btn-install-now" onclick="triggerPwaInstall()">
+          <i class="fa-solid fa-download"></i> ইনস্টল করুন
+        </button>
+        <button type="button" class="btn-install-later" onclick="closeInstallPopup()">
+          এখন নয়
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- iOS / Manual PWA Installation Guide Modal -->
+  <div class="pwa-guide-modal-overlay" id="pwaGuideModalOverlay" onclick="closePwaGuideModal(event)" style="display: none;">
+    <div class="pwa-guide-modal-content" onclick="event.stopPropagation()">
+      <div class="pwa-guide-header">
+        <div class="pwa-guide-brand">
+          <img src="icon-192.png" alt="Hasaan Bazaar" class="pwa-guide-icon">
+          <div>
+            <h3>Hasaan Bazaar অ্যাপ ইনস্টল গাইড</h3>
+            <p>Elegance of Sunnah — ১ ক্লিকে আপনার ফোনে রাখুন</p>
+          </div>
+        </div>
+        <button type="button" class="close-guide-btn" onclick="closePwaGuideModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="pwa-guide-body">
+        <div class="pwa-device-step" id="pwaIosStep">
+          <h4><i class="fa-brands fa-apple gold-text"></i> আইফোন ও আইপ্যাডে (iOS Safari):</h4>
+          <ol class="pwa-step-list">
+            <li>Safari ব্রাউজারের নিচে শেয়ার বোতামে ( <i class="fa-solid fa-arrow-up-from-bracket pwa-step-ico"></i> <strong>Share</strong> ) চাপ দিন।</li>
+            <li>মেনুটির নিচের দিকে স্ক্রল করে <i class="fa-regular fa-square-plus pwa-step-ico"></i> <strong>"Add to Home Screen"</strong> নির্বাচন করুন।</li>
+            <li>উপরে ডানদিকের কোণায় <strong>"Add"</strong> বোতামে চাপ দিন।</li>
+          </ol>
+        </div>
+        <div class="pwa-device-step" id="pwaAndroidStep">
+          <h4><i class="fa-brands fa-android gold-text"></i> অ্যান্ড্রয়েড ও গুগল ক্রোম (Android / Chrome):</h4>
+          <ol class="pwa-step-list">
+            <li>ব্রাউজারের উপরের ৩-ডট মেনুতে ( <i class="fa-solid fa-ellipsis-vertical pwa-step-ico"></i> ) ট্যাপ করুন।</li>
+            <li><strong>"Install app"</strong> অথবা <strong>"Add to Home screen"</strong> চাপুন।</li>
+            <li>পপ-আপে <strong>"Install"</strong> চাপলেই কয়েক সেকেন্ডে ফোনে অ্যাপ ইনস্টল হয়ে যাবে।</li>
+          </ol>
+        </div>
+        <div class="pwa-guide-footer-badge">
+          <i class="fa-solid fa-shield-halved gold-text"></i> এটি শতভাগ নিরাপদ, কোনো প্লে-স্টোর ফি নেই এবং অফলাইনেও দ্রুত খোলে।
+        </div>
+      </div>
+      <div class="pwa-guide-actions">
+        <button type="button" class="btn btn-primary btn-block" onclick="closePwaGuideModal()">বুঝতে পেরেছি (Got it)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LIVE ORDER TRACKING MODAL ================= -->
+  <div class="modal-overlay" id="orderTrackingModalOverlay" onclick="closeOrderTrackingModal(event)"></div>
+  <div class="order-tracking-modal" id="orderTrackingModal" role="dialog" aria-modal="true" aria-labelledby="trackingModalTitle">
+    <div class="tracking-modal-header">
+      <div class="tracking-modal-title-wrap">
+        <div class="tracking-icon-circle"><i class="fa-solid fa-truck-fast gold-text"></i></div>
+        <div>
+          <h3 id="trackingModalTitle">লাইভ পার্সেল ও অর্ডার ট্র্যাকিং</h3>
+          <p class="tracking-subtitle">অর্ডার আইডি বা মোবাইল নম্বর দিয়ে ডেলিভারি অগ্রগতি দেখুন</p>
+        </div>
+      </div>
+      <button type="button" class="modal-close-btn" onclick="closeOrderTrackingModal()" aria-label="বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="tracking-modal-body">
+      <!-- Search Form -->
+      <form class="tracking-search-form" id="orderTrackingForm" onsubmit="event.preventDefault(); submitOrderTracking();">
+        <div class="tracking-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass tracking-input-icon"></i>
+          <input type="text" id="orderTrackingInput" placeholder="অর্ডার আইডি (যেমন #HB-749215) বা ফোন নম্বর..." required autocomplete="off">
+          <button type="submit" class="btn btn-primary tracking-search-btn" id="trackingSubmitBtn">
+            <span>ট্র্যাক করুন</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="tracking-search-tips">
+          <span><i class="fa-solid fa-lightbulb gold-text"></i> মেমোতে থাকা ৬ সংখ্যার অর্ডার আইডি (যেমন: <strong>#HB-749215</strong>) অথবা অর্ডার করার ফোন নম্বরটি দিন।</span>
+        </div>
+      </form>
+
+      <!-- Tracking Loader -->
+      <div class="tracking-loader" id="trackingLoader" style="display: none;">
+        <div class="tracking-spinner"></div>
+        <p>অর্ডারের তথ্য খোঁজা হচ্ছে...</p>
+      </div>
+
+      <!-- Tracking Not Found -->
+      <div class="tracking-not-found" id="trackingNotFound" style="display: none;">
+        <i class="fa-solid fa-circle-exclamation not-found-icon"></i>
+        <h4>কোনো অর্ডার পাওয়া যায়নি!</h4>
+        <p>আপনার অর্ডার আইডি বা ফোন নম্বরটি সঠিক কিনা অনুগ্রহ করে যাচাই করুন।</p>
+        <a href="https://wa.me/8801738625136?text=আসসালামু%20আলাইকুম,%20আমার%20অর্ডার%20খুঁজে%20পাচ্ছি%20না,%20সহায়তা%20প্রয়োজন।" target="_blank" class="btn btn-secondary btn-sm" style="margin-top: 12px; display:inline-flex;">
+          <i class="fa-brands fa-whatsapp"></i> সরাসরি WhatsApp সহায়তায় যোগাযোগ করুন
+        </a>
+      </div>
+
+      <!-- Tracking Results -->
+      <div class="tracking-result-wrap" id="trackingResultWrap" style="display: none;">
+        <!-- Order Header Bar -->
+        <div class="tracking-header-card">
+          <div class="tracking-header-left">
+            <span class="tracking-order-badge" id="trackOrderBadgeId">#HB-000000</span>
+            <span class="tracking-order-date" id="trackOrderDate">--</span>
+          </div>
+          <div class="tracking-header-right">
+            <span class="tracking-current-status-pill" id="trackCurrentStatusPill">--</span>
+          </div>
+        </div>
+
+        <!-- 5-Step Visual Timeline Progress Bar -->
+        <div class="tracking-stepper-wrapper">
+          <div class="tracking-stepper-track">
+            <div class="tracking-stepper-progress" id="trackingProgressFill" style="width: 0%;"></div>
+          </div>
+          <div class="tracking-steps-container">
+            <div class="tracking-step" id="trackStep1">
+              <div class="step-circle"><i class="fa-solid fa-file-invoice"></i></div>
+              <span class="step-label">অর্ডার গৃহীত</span>
+              <span class="step-sublabel">Placed</span>
+            </div>
+            <div class="tracking-step" id="trackStep2">
+              <div class="step-circle"><i class="fa-solid fa-circle-check"></i></div>
+              <span class="step-label">নিশ্চিতকরণ</span>
+              <span class="step-sublabel">Confirmed</span>
+            </div>
+            <div class="tracking-step" id="trackStep3">
+              <div class="step-circle"><i class="fa-solid fa-boxes-packing"></i></div>
+              <span class="step-label">প্যাকিং চলছে</span>
+              <span class="step-sublabel">Processing</span>
+            </div>
+            <div class="tracking-step" id="trackStep4">
+              <div class="step-circle"><i class="fa-solid fa-truck-fast"></i></div>
+              <span class="step-label">ডেলিভারিতে</span>
+              <span class="step-sublabel">Shipped</span>
+            </div>
+            <div class="tracking-step" id="trackStep5">
+              <div class="step-circle"><i class="fa-solid fa-handshake"></i></div>
+              <span class="step-label">ডেলিভার্ড</span>
+              <span class="step-sublabel">Delivered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cancelled State Banner -->
+        <div class="tracking-cancelled-banner" id="trackingCancelledBanner" style="display: none;">
+          <i class="fa-solid fa-ban"></i>
+          <div>
+            <strong>এই অর্ডারটি বাতিল (Cancelled) করা হয়েছে।</strong>
+            <p>অর্ডার সংক্রান্ত যেকোনো তথ্যের জন্য আমাদের কাস্টমার সাপোর্টে যোগাযোগ করতে পারেন।</p>
+          </div>
+        </div>
+
+        <!-- Detail Cards -->
+        <div class="tracking-details-grid">
+          <div class="tracking-detail-card">
+            <h5><i class="fa-solid fa-user-tag gold-text"></i> গ্রাহকের তথ্য ও ঠিকানা</h5>
+            <div class="track-info-row">
+              <span>নাম:</span>
+              <strong id="trackCustName">--</strong>
+            </div>
+            <div class="track-info-row">
+              <span>ফোন:</span>
+              <strong id="trackCustPhone">--</strong>
+            </div>
+            <div class="track-info-row">
+              <span>ঠিকানা:</span>
+              <strong id="trackCustAddress">--</strong>
+            </div>
+            <div class="track-info-row">
+              <span>ডেলিভারি এলাকা:</span>
+              <strong id="trackCustArea">--</strong>
+            </div>
+          </div>
+
+          <div class="tracking-detail-card">
+            <h5><i class="fa-solid fa-receipt gold-text"></i> পেমেন্ট ও ইনভয়েস বিবরণ</h5>
+            <div class="track-info-row">
+              <span>পেমেন্ট মাধ্যম:</span>
+              <strong id="trackPayMethod">--</strong>
+            </div>
+            <div class="track-info-row" id="trackTrxRow" style="display:none;">
+              <span>TrxID:</span>
+              <strong id="trackTrxId" class="gold-text">--</strong>
+            </div>
+            <div class="track-info-row">
+              <span>পণ্যের মূল্য:</span>
+              <strong id="trackSubtotal">৳ ০</strong>
+            </div>
+            <div class="track-info-row">
+              <span>ডেলিভারি চার্জ:</span>
+              <strong id="trackDeliveryFee">৳ ০</strong>
+            </div>
+            <div class="track-info-row track-total-row">
+              <span>সর্বমোট বিল:</span>
+              <strong class="gold-text" id="trackTotalBill">৳ ০</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ordered Items Summary -->
+        <div class="tracking-items-card">
+          <h5><i class="fa-solid fa-bag-shopping gold-text"></i> অর্ডারের পণ্যাবলি</h5>
+          <ul class="tracking-items-list" id="trackItemsList">
+            <!-- items injected dynamically -->
+          </ul>
+        </div>
+
+        <!-- Support Actions -->
+        <div class="tracking-footer-actions">
+          <a href="tel:+8801738625136" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> সরাসরি হেল্পলাইন: ০১৭৩৮-৬২৫১৩৬</a>
+          <a href="https://wa.me/8801738625136" target="_blank" class="btn btn-wa-backup btn-sm"><i class="fa-brands fa-whatsapp"></i> WhatsApp মেসেজ দিন</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Item added to Hasaan Bazaar bag!</span>
+  </div>
+
+  <!-- Supabase CDN Client (PostgreSQL & Realtime) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- html2pdf.js for Direct High Resolution PDF Memo Downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
